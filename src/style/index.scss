@@ -1,0 +1,140 @@
+$moss-green: #AEDAA6;
+$bg-color: $moss-green;
+$border-color: #f5f5f5;
+$primary-text: #434343;
+$secondary-text: #969696;
+
+@mixin uppercase() {
+  text-transform: uppercase;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $bg-color;
+  font-family: "Frutiger Neue W02 Book",Arial,Helvetica,sans-serif;
+}
+
+.container {
+  background: white;
+  width: 40.6em;
+  margin: 6.3em auto 0;
+  border-radius: .1em;
+  box-shadow: 0 0 1em $secondary-text;
+
+  header {
+    border-bottom: .08em solid $border-color;
+    height: 3em;
+    line-height: 3em;
+    padding-left: 2.2em;
+    position: relative;
+
+    span.back {
+      @include uppercase();
+      font-size: .7em;
+      color: $secondary-text;
+
+      &::before {
+        content: ' ';
+        height: .5em;
+        width: .5em;
+        border-top: .1em solid $secondary-text;
+        border-left: .1em solid $secondary-text;
+        position: absolute;
+        left: 1.9em;
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+
+    img {
+      position: absolute;
+      right: .8em;
+      height: 1.2em;
+      width: 1.2em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+main {
+  display: block;
+  .img-box {
+    width: 17.2em;
+    height: 20.3em;
+    overflow: hidden;
+    border-right: .01em solid $border-color;
+    display: inline-block;
+
+    img {
+      width: 16em;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  aside {
+    display: inline-block;
+    padding: 1.2em 1.8em 0;
+    width: 23em;
+    vertical-align: top;
+
+    h2 {
+      @include uppercase();
+      font-size: 1.21em;
+      font-weight: 300;
+      margin: 1.3em 0 0;
+      color: $primary-text;
+    }
+
+    .subtitle {
+      @include uppercase();
+      margin: .5em 0 0;
+      font-size: .68em;
+      color: $secondary-text;
+    }
+
+    .price {
+      margin-top: .8em;
+      font-size: 1.45em;
+      font-weight: 300;
+      color: $primary-text;
+    }
+
+    .describe {
+      font-size: 0.79em;
+      margin-top: 1.5em;
+      line-height: 1.6em;
+      color: $secondary-text;
+    }
+  }
+}
+
+.operation {
+  padding-top: 1.2em;
+
+  button {
+    @include uppercase();
+    border: .08em solid $border-color;
+    background: white;
+    color: $primary-text;
+    width: 11.4em;
+    height: 3em;
+    cursor: pointer;
+    &:hover {
+      background: $border-color;
+    }
+
+    &:first-child {
+      margin-right: .2em;
+    }
+  }
+}
